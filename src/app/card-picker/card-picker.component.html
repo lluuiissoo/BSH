@@ -1,0 +1,23 @@
+<div style="text-align:center; background-image: url('../../assets/bsh-bg.png');">
+  <h1>
+    Card Picker
+  </h1>
+  <div style="text-align: right; width: 100%">
+    <a routerLink="/learn-party"><img alt="Next" src="../../assets/next.png"></a>
+  </div>
+  <div>
+    <select name="cards2" (change)="onChange($event.target.value)">
+      <option *ngFor="let c of cards" 
+        [value]="c.id" >
+        {{c.name}}
+    </option>
+    </select>
+  </div>
+  <br/>
+  <h2>Card Details</h2>
+  <div>{{selectedCard.id}}</div>
+  <div class="cardName">{{selectedCard.name}}</div> 
+  <img width="300" alt="Card Image" src={{selectedCard.image}}>
+</div>
+
+<router-outlet></router-outlet>
